@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.topbar {
+  min-height: 76px;
+  padding: 16px max(24px, calc((100% - 1120px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.brand {
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main {
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  margin: 32px auto;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #64748b;
+}
+
+.create-project {
+  margin: 24px 0;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.create-project summary {
+  padding: 14px 20px;
+  border-radius: 10px;
+  color: #1d4ed8;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-project summary:hover {
+  background: #eff6ff;
+}
+
+.create-project[open] summary {
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 10px 10px 0 0;
+}
+
+#project-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+#project-form > div {
+  min-width: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+label span {
+  color: #64748b;
+  font-weight: 400;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #bdc9d9;
+  border-radius: 7px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+textarea {
+  display: block;
+  min-height: 76px;
+  resize: vertical;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+button,
+#projects-list a {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled),
+#projects-list a:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#logout-button {
+  flex-shrink: 0;
+  border-color: #dbe3ef;
+  background: #fff;
+  color: #475569;
+}
+
+#logout-button:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #93b4ff;
+  outline-offset: 3px;
+}
+
+#projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#projects-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+#projects-list h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+#projects-list p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  max-height: 4.5em;
+  margin: 0;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+
+#projects-list a {
+  margin-top: auto;
+}
+
+p[role="status"] {
+  margin: 12px 0;
+  color: #475569;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+p[role="status"]:empty {
+  display: none;
+}
+
+#logout-message:not(:empty) {
+  margin-bottom: 20px;
+  color: #b91c1c;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    min-height: 68px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .brand {
+    max-width: 220px;
+    font-size: 16px;
+  }
+
+  main {
+    width: calc(100% - 32px);
+    margin: 24px auto;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  #project-form,
+  #projects-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #project-form,
+  #projects-list li {
+    padding: 18px;
+  }
+}

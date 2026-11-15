@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview | Project Interview Workspace</title>
+  <link rel="stylesheet" href="/css/interview.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.js" defer></script>
+  <script src="/js/interview.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/dashboard">Project Interview Workspace</a>
+    <a id="back-to-project">Back to project</a>
+  </header>
+
+  <main>
+    <header class="page-heading">
+      <h1>Project interview</h1>
+      <p>Explain your decisions, review feedback, and practise one question at a time.</p>
+    </header>
+
+    <p id="interview-message" role="status">Loading interview...</p>
+    <button id="prepare-interview-questions" type="button" hidden>
+      Generate interview questions
+    </button>
+
+    <section id="question-section" class="question-card" hidden>
+      <div class="question-progress">
+        <h2 id="question-number"></h2>
+        <progress id="interview-progress" max="5" value="0" aria-label="Current question"></progress>
+      </div>
+
+      <p id="question-text"></p>
+
+      <details id="answer-panel" class="answer-panel" open>
+        <summary>Your answer</summary>
+        <div class="panel-body">
+          <form id="answer-form">
+            <label for="answer-text">Explain how your project works</label>
+            <textarea id="answer-text" rows="5" required></textarea>
+            <button id="submit-answer" type="submit">Submit answer</button>
+          </form>
+        </div>
+      </details>
+
+      <details id="feedback-section" class="feedback-panel" hidden>
+        <summary>Answer feedback</summary>
+        <p id="feedback-text" class="feedback-content"></p>
+      </details>
+
+      <div class="follow-up-actions">
+        <button id="generate-follow-up" type="button" hidden>
+          Check for follow-up
+        </button>
+      </div>
+
+      <section id="follow-up-section" hidden>
+        <h3>Follow-up question</h3>
+        <p id="follow-up-context"></p>
+        <p id="follow-up-question"></p>
+        <p id="follow-up-message" role="status"></p>
+
+        <form id="follow-up-form" hidden>
+          <label for="follow-up-answer">Your follow-up answer</label>
+          <textarea id="follow-up-answer" rows="3" required></textarea>
+          <div class="form-actions">
+            <button id="submit-follow-up" type="submit" disabled>
+              Submit follow-up answer
+            </button>
+            <button id="skip-follow-up" type="button" disabled>
+              Skip follow-up
+            </button>
+          </div>
+        </form>
+
+        <details id="follow-up-feedback-section" class="feedback-panel" hidden>
+          <summary>Follow-up feedback</summary>
+          <p id="follow-up-feedback" class="feedback-content"></p>
+        </details>
+      </section>
+
+      <nav class="question-navigation" aria-label="Interview questions">
+        <button id="previous-question" type="button" hidden>Previous question</button>
+        <div class="navigation-actions">
+          <button id="reattempt-question" type="button" hidden>Reattempt question</button>
+          <button id="next-question" type="button" hidden>Next question</button>
+          <button id="finish-interview" type="button" hidden>Finish interview</button>
+        </div>
+      </nav>
+    </section>
+
+    <section id="interview-results" hidden>
+      <h2>Interview completed</h2>
+      <p>Select a question to review its latest answer, feedback, follow-up, and earlier attempts.</p>
+      <div id="interview-results-list"></div>
+    </section>
+  </main>
+</body>
+</html>

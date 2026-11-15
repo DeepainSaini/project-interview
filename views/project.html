@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details | Project Interview Workspace</title>
+  <link rel="stylesheet" href="/css/project.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.js" defer></script>
+  <script src="/js/project.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/dashboard">Project Interview Workspace</a>
+    <a class="back-link" href="/dashboard">Back to dashboard</a>
+  </header>
+
+  <main>
+    <header class="project-header">
+      <h1 id="project-title">Loading...</h1>
+      <p id="project-description"></p>
+      <p id="project-message" role="status"></p>
+    </header>
+
+    <p id="sources-message" role="status">Loading saved text...</p>
+
+    <div class="source-panels">
+      <details id="notes-panel" class="input-panel">
+        <summary>Project notes</summary>
+        <div class="panel-body">
+          <p class="hint">Describe your features, decisions, and changes over time.</p>
+          <form id="notes-form">
+            <fieldset id="notes-fields" disabled>
+              <label for="notes">Explain your project</label>
+              <textarea id="notes" rows="6" required></textarea>
+              <button type="submit">Save notes</button>
+            </fieldset>
+          </form>
+          <p id="notes-message" role="status"></p>
+        </div>
+      </details>
+
+      <details id="readme-panel" class="input-panel">
+        <summary>README</summary>
+        <div class="panel-body">
+          <p class="hint">Paste your README to give the interview more project context.</p>
+          <form id="readme-form">
+            <fieldset id="readme-fields" disabled>
+              <label for="readme">README text</label>
+              <textarea id="readme" rows="6" required></textarea>
+              <button type="submit">Save README</button>
+            </fieldset>
+          </form>
+          <p id="readme-message" role="status"></p>
+        </div>
+      </details>
+    </div>
+
+    <div class="workspace">
+      <section class="card summary-card" aria-labelledby="summary-heading">
+        <div class="section-heading">
+          <h2 id="summary-heading">Project summary</h2>
+          <button type="button" id="generate-summary" class="secondary-button">
+            Generate new summary
+          </button>
+        </div>
+
+        <p class="hint">Review and edit this summary before starting an interview.</p>
+        <p id="summary-message" role="status"></p>
+        <p id="summary-status" class="hint"></p>
+
+        <label for="summary-content">Saved summary</label>
+        <textarea id="summary-content" rows="10" readonly></textarea>
+
+        <div class="actions">
+          <button type="button" id="save-summary" disabled>Save changes</button>
+        </div>
+      </section>
+
+      <section class="card interviews-card" aria-labelledby="interviews-heading">
+        <h2 id="interviews-heading">Interviews</h2>
+        <p class="hint">Start with your saved summary or return to an earlier interview.</p>
+
+        <button id="start-interview" type="button">Start new interview</button>
+        <p id="interviews-message" role="status"></p>
+
+        <h3>Existing interviews</h3>
+        <ul id="interviews-list"></ul>
+      </section>
+    </div>
+
+    <details id="history-panel" class="input-panel history-panel">
+      <summary>Saved notes and README history</summary>
+      <div class="panel-body">
+        <p id="history-message" role="status"></p>
+        <ul id="history-list"></ul>
+
+        <div id="history-preview" hidden>
+          <h3 id="history-title"></h3>
+          <pre id="history-content"></pre>
+        </div>
+      </div>
+    </details>
+  </main>
+</body>
+</html>

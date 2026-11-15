@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-color: #f4f6f8;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 26px;
+}
+
+section {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font: inherit;
+}
+
+input:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2563eb;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+hr {
+  display: none;
+}
+
+p[role="status"] {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+[hidden] {
+  display: none;
+}
+
+.switch-button {
+  width: auto;
+  padding: 0;
+  background: none;
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.switch-button:hover {
+  background: none;
+  color: #1d4ed8;
+}

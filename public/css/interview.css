@@ -1,0 +1,402 @@
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.topbar {
+  min-height: 76px;
+  padding: 16px max(24px, calc((100% - 1120px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.brand {
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a {
+  color: #2563eb;
+  text-underline-offset: 3px;
+}
+
+#back-to-project {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+main {
+  width: calc(100% - 48px);
+  max-width: 960px;
+  margin: 24px auto;
+}
+
+.page-heading h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+.page-heading p {
+  margin: 0 0 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: anywhere;
+}
+
+.question-card,
+.result-question {
+  padding: 24px;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+.question-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+#question-number {
+  margin: 0;
+  color: #2563eb;
+  font-size: 14px;
+}
+
+progress {
+  width: 140px;
+  height: 7px;
+  accent-color: #2563eb;
+}
+
+#question-text {
+  margin: 16px 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+details {
+  margin: 16px 0;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  background: #fff;
+}
+
+summary {
+  padding: 12px 16px;
+  color: #334155;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+summary:hover {
+  background: #f1f5f9;
+}
+
+details[open] > summary {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.panel-body {
+  padding: 16px;
+}
+
+.feedback-panel {
+  background: #f8fbff;
+}
+
+.feedback-panel summary {
+  color: #1d4ed8;
+}
+
+.feedback-content {
+  margin: 0;
+  padding: 16px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.65;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 140px;
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid #bdc9d9;
+  border-radius: 7px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+textarea[readonly] {
+  background: #f8fafc;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #93b4ff;
+  outline-offset: 3px;
+}
+
+#previous-question,
+#reattempt-question,
+#skip-follow-up {
+  border-color: #cbd5e1;
+  background: #fff;
+  color: #334155;
+}
+
+#previous-question:hover:not(:disabled),
+#reattempt-question:hover:not(:disabled),
+#skip-follow-up:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+#finish-interview {
+  background: #15803d;
+}
+
+#finish-interview:hover:not(:disabled) {
+  background: #166534;
+}
+
+#follow-up-section {
+  margin-top: 20px;
+  padding: 18px;
+  border-left: 3px solid #2563eb;
+  border-radius: 0 8px 8px 0;
+  background: #f0f5ff;
+}
+
+#follow-up-section h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+#follow-up-context {
+  margin: 6px 0 12px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+#follow-up-question {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#follow-up-answer {
+  min-height: 100px;
+}
+
+.form-actions,
+.navigation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.question-navigation {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px -24px -24px;
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0 0 10px 10px;
+  background: #fff;
+  box-shadow: 0 -4px 12px rgb(15 23 42 / 3%);
+  z-index: 1;
+}
+
+.navigation-actions {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+p[role="status"] {
+  margin: 12px 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+p[role="status"]:empty {
+  display: none;
+}
+
+#interview-message:not(:empty) {
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: #e8eefc;
+}
+
+#interview-results > h2 {
+  margin-bottom: 6px;
+}
+
+#interview-results > p {
+  color: #64748b;
+}
+
+.result-question {
+  margin: 16px 0;
+  padding: 0;
+}
+
+.result-question > summary {
+  padding: 18px 20px;
+  border-radius: 10px;
+  color: #1e293b;
+  font-size: 17px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.result-question[open] > summary {
+  border-radius: 10px 10px 0 0;
+}
+
+.result-body {
+  padding: 4px 20px 20px;
+}
+
+#interview-results h4 {
+  margin-bottom: 6px;
+}
+
+#interview-results h4 + p {
+  margin-top: 0;
+}
+
+.result-body > details h4,
+.result-body > details p {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    min-height: 68px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  main {
+    width: calc(100% - 24px);
+    margin: 20px auto;
+  }
+
+  .page-heading h1 {
+    font-size: 24px;
+  }
+
+  .question-card {
+    padding: 18px;
+  }
+
+  .result-question > summary {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .result-body {
+    padding: 4px 16px 16px;
+  }
+
+  #question-text {
+    font-size: 18px;
+  }
+
+  progress {
+    width: 96px;
+  }
+
+  #follow-up-section {
+    padding: 14px;
+  }
+
+  .question-navigation {
+    position: static;
+    margin: 20px -18px -18px;
+    padding: 14px 18px;
+  }
+
+  .form-actions,
+  .navigation-actions {
+    width: 100%;
+  }
+
+  .form-actions button,
+  .navigation-actions button {
+    flex: 1 1 140px;
+  }
+}

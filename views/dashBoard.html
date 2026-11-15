@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your projects | Project Interview Workspace</title>
+  <link rel="stylesheet" href="/css/dashBoard.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.js" defer></script>
+  <script src="/js/dashBoard.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/dashboard">Project Interview Workspace</a>
+    <button type="button" id="logout-button">Log out</button>
+  </header>
+
+  <main>
+    <p id="logout-message" role="status"></p>
+
+    <section aria-labelledby="projects-heading">
+      <div class="section-heading">
+        <h1 id="projects-heading">Your projects</h1>
+        <p>Choose a project to update its notes or practise an interview.</p>
+      </div>
+
+      <details class="create-project">
+        <summary>Create a project</summary>
+
+        <form id="project-form">
+          <div>
+            <label for="title">Project title</label>
+            <input
+              id="title"
+              type="text"
+              maxlength="255"
+              placeholder="e.g. Expense Tracker"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="description">Short description <span>(optional)</span></label>
+            <textarea
+              id="description"
+              rows="2"
+              placeholder="What does your project help people do?"
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Create project</button>
+            <p id="project-message" role="status"></p>
+          </div>
+        </form>
+      </details>
+
+      <p id="projects-message" role="status"></p>
+      <ul id="projects-list"></ul>
+    </section>
+  </main>
+</body>
+</html>
