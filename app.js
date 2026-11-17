@@ -16,6 +16,9 @@ app.use(sessionMiddleware);
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.get('/', (req, res) => {
+  res.redirect('/api/auth');
+});
 
 const startServer = async () => {
   try {
