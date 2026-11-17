@@ -7,6 +7,7 @@ const projectRoutes = require('./routes/projectRoutes');
 const { sessionMiddleware, sessionStore } = require('./config/session');
 
 const app = express();
+app.set('trust proxy', 'loopback');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
