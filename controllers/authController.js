@@ -4,6 +4,9 @@ const { User } = require('../models');
 
 
 const showHome = (req, res) => {
+  if (req.session.userId) {
+    return res.redirect('/dashboard');
+  }
   res.sendFile(path.join(__dirname, '..', 'views', 'auth.html'));
 };
 
